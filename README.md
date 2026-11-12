@@ -14,6 +14,25 @@ Both use **Streamable HTTP** and authenticate with an Apify API token
 <https://console.apify.com/settings/integrations>. Billing is pay-per-completed
 tool call ($0.002 news / $0.003 jobs on the FREE tier); failed calls are free.
 
+## One URL, five tools (Apify MCP gateway)
+
+If you already use the [Apify MCP server](https://mcp.apify.com), you can load
+five Indonesian data tools in one connection — no separate server install:
+
+```
+https://mcp.apify.com/?tools=galih_rakasiwi/indonesian-news-by-url,galih_rakasiwi/glints-jobs-by-url,galih_rakasiwi/traveloka-hotels-scraper,galih_rakasiwi/sports-scores-api,galih_rakasiwi/medium-api
+```
+
+```bash
+claude mcp add --transport http indonesia-data \
+  "https://mcp.apify.com/?tools=galih_rakasiwi/indonesian-news-by-url,galih_rakasiwi/glints-jobs-by-url,galih_rakasiwi/traveloka-hotels-scraper,galih_rakasiwi/sports-scores-api,galih_rakasiwi/medium-api" \
+  --header "Authorization: Bearer $APIFY_TOKEN"
+```
+
+The agent then sees each actor as a tool (`galih_rakasiwi--indonesian-news-by-url`,
+…). This is the fastest path for Claude/Cursor users who already have an Apify
+token.
+
 ## Connect
 
 ### Claude Code
