@@ -1,0 +1,45 @@
+{
+  "actorSpecification": 1,
+  "name": "glints-jobs-mcp",
+  "title": "Glints Jobs MCP — Indonesian Job Search for AI Agents",
+  "description": "MCP server giving AI agents access to the Indonesian job market on Glints: search open roles by keyword and city, then fetch any job with salary range, skills, experience and the full description. Cloudflare solved in-container. Connect Claude, Cursor or any MCP client via Streamable HTTP.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "usesStandbyMode": true,
+  "webServerMcpPath": "/mcp",
+  "input": {
+    "title": "Glints Jobs MCP — Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "port": {
+        "title": "API Port",
+        "type": "integer",
+        "description": "Port the MCP server listens on.",
+        "default": 8000,
+        "minimum": 1024,
+        "maximum": 65535,
+        "unit": "port"
+      }
+    },
+    "required": []
+  },
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "Glints Jobs MCP — Output",
+    "description": "The running MCP server.",
+    "type": "object",
+    "properties": {
+      "mcpEndpoint": {"type": "string", "title": "MCP endpoint (Streamable HTTP)", "template": "{{run.containerUrl}}/mcp"},
+      "health": {"type": "string", "title": "Health Check", "template": "{{run.containerUrl}}/health"},
+      "runConsole": {"type": "string", "title": "Run Console", "template": "{{links.consoleRunUrl}}"}
+    }
+  },
+  "seo": {
+    "title": "Glints Jobs MCP — Indonesian Job Search for AI Agents",
+    "description": "MCP server for the Indonesian job market: search Glints roles by keyword and city, get salary, skills and full descriptions. No login."
+  },
+  "tags": ["mcp", "jobs", "indonesia", "glints", "hiring", "ai-agents", "llm-tools", "fastapi"],
+  "minMemoryMbytes": 512,
+  "maxMemoryMbytes": 2048
+}
