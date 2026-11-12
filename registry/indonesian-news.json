@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.galih752/indonesian-news",
+  "title": "Indonesian News",
+  "description": "Indonesian headlines with full article text, keyword search and article lookup.",
+  "version": "1.0.0",
+  "websiteUrl": "https://apify.com/galih_rakasiwi/indonesian-news-mcp",
+  "repository": {
+    "url": "https://github.com/galih752/indonesia-mcp-servers",
+    "source": "github",
+    "subfolder": "indonesian-news-mcp",
+    "id": "1454989164"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://galih-rakasiwi--indonesian-news-mcp.apify.actor/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Apify API token, sent as: Bearer <token> (https://console.apify.com/settings/integrations)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

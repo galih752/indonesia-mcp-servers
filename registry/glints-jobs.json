@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.galih752/glints-jobs",
+  "title": "Glints Jobs Indonesia",
+  "description": "Search Glints jobs in Indonesia with salary, skills and city; fetch full job details by URL.",
+  "version": "1.0.0",
+  "websiteUrl": "https://apify.com/galih_rakasiwi/glints-jobs-mcp",
+  "repository": {
+    "url": "https://github.com/galih752/indonesia-mcp-servers",
+    "source": "github",
+    "subfolder": "glints-jobs-mcp",
+    "id": "1454989164"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://galih-rakasiwi--glints-jobs-mcp.apify.actor/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Apify API token, sent as: Bearer <token> (https://console.apify.com/settings/integrations)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
